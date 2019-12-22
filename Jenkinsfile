@@ -2,24 +2,23 @@ pipeline {
    agent any
 
    stages {
-      stage('Hello') {
-         steps {
-            echo 'Hello World'
-         }
-		 
-		 when {
-			branch 'master'
-			steps {
-				echo '这是 MASTER 代码'
+		stage("deploy to test") {
+			when {
+				branch 'dev'
+				steps {
+					echo 'dev'
+				}
 			}
-		 }
-		 
-		 when {
-			branch 'dev' 
-			steps {
-				echo '这是 dev 代码'
+		}
+
+		stage("deploy to prod") {
+			when {
+				branch 'matser'
+				steps {
+				echo 'master to prod'
+				}
 			}
-		 }
-      }
+		}
+
    }
 }
