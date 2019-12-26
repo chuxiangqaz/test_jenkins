@@ -1,5 +1,5 @@
 {
     "require": {
-        "chuxiangqaz/redis-client":"*"
+        "chuxiangqaz/redis-client": "*"
     }
 }
