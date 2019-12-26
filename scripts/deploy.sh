@@ -9,7 +9,7 @@ cd $WORKSPACE
 # port      需要映射的端口，默认映射相同
 # images_id 镜像的Image，带 TAG
 #############################
-profile={$1:test}
+profile={$1}
 project=$2
 ssh_host=$3
 port=$4

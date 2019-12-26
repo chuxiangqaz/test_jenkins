@@ -11,14 +11,14 @@ export PROJECT=$2
 export PORT=$3
 export DOCKER_IMAGE=$4
 
-IMAGEA_NAME=${DOCKER_IMAGE%:*}
+IMAGEA_ID=${DOCKER_IMAGE%:*}
 container_id=$(docker ps | grep $PROJECT | awk '{print $1}')
 if [ $container_id ]; then
     docker-compose down
 fi
 
 # 清理镜像
-images_id=$(docker images | grep $DOCKER_IMAGE | awk '{print $3}')
+images_id=$(docker images | grep $IMAGEA_ID | awk '{print $3}')
 if [ "$images_id" ]; then
     for i in $images_id;
     do
