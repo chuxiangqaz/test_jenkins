@@ -1,8 +1,7 @@
 version: '3'
-
 services: 
     webapp:
-        image: ${DOCKER_IMAGE}
+        image: registry.cn-hangzhou.aliyuncs.com/chuxiang_docker/my_php_docker:v20191226162504123-alpine-nginx14php72
         container_name: ${PROJECT}
         restart: always
         ports: 
