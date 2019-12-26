@@ -1,11 +1,11 @@
 version: '3'
-services: 
+services:
     webapp:
-        image: registry.cn-hangzhou.aliyuncs.com/chuxiang_docker/my_php_docker:v20191226162504123-alpine-nginx14php72
+        image: ${DOCKER_IMAGE}
         container_name: ${PROJECT}
         restart: always
-        ports: 
-            -${PORT}:${PORT}
-        environment: 
-            -profile=${PROFILE}
+        ports:
+            - ${PORT}:${PORT}
+        environment:
+            profile: ${PROFILE}
         
