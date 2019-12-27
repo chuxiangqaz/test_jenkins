@@ -21,13 +21,13 @@ ssh $ssh_host "mkdir -p $deploy_dir"
 
 
 # 拷贝文件
-scp $WORKSPACE/scripts/jenkins/docker/{docker-compose.yml,down.sh,startup.sh} $ssh_host:$deploy_dir
+scp $WORKSPACE/deploy_scripts/jenkins/docker/{docker-compose.yml,down.sh,startup.sh} $ssh_host:$deploy_dir
 
 ssh $ssh_host "cd $deploy_dir && chmod +x *.sh"
 
 # 停止容器
-ssh $ssh_host "cd $deploy_dir && ./down.sh $profile $project $port $images_id"
+ssh $ssh_host "cd $deploy_dir && ./down.sh $profile $project $port $images_id $deploy_dir"
 
 # 启动docker
-ssh $ssh_host "cd $deploy_dir && ./startup.sh $profile $project $port $images_id"
+ssh $ssh_host "cd $deploy_dir && ./startup.sh $profile $project $port $images_id $deploy_dir"
 

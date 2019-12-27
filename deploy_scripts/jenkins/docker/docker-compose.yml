@@ -9,4 +9,5 @@ services:
         network_mode: "host"
         environment:
             profile: ${PROFILE}
-        
+        volumes:
+          - ${APP_DIR}/storage:/usr/share/nginx/html/src/storage
