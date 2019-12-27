@@ -5,7 +5,7 @@ services:
         container_name: ${PROJECT}
         restart: always
         ports:
-            - ${PORT}:${PORT}
+            - ${PORT}:80
         environment:
             profile: ${PROFILE}
         
