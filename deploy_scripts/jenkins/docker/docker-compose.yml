@@ -6,6 +6,7 @@ services:
         restart: always
         ports:
             - ${PORT}:80
+        network_mode: "host"
         environment:
             profile: ${PROFILE}
         
